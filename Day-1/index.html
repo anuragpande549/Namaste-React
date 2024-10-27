@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First React</title>
+</head>
+
+<body>
+    <div id="root">hello Anurag</div>
+</body>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script>
+
+    // const heading = React.createElement("h1", {}, "HEllO!.. Anurag React  ")
+    // const rootId = document.getElementById("root")
+    // console.log(rootId);
+    // const root = ReactDOM.createRoot(rootId);
+    // root.render(heading);
+    const htmlRoot = document.getElementById("root")
+    const root = ReactDOM.createRoot(htmlRoot);
+    const h1 = React.createElement("h1",{id:"h1 Heading"},"this is heading 1")
+    const h2 = React.createElement("h1",{},"this is heading 2")
+    const div = React.createElement("div", {}, [h1,h2]);
+    root.render(div)
+    
+</script>
+
+</html>
