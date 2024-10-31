@@ -1,11 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// const H1 = React.createElement("h1",{id:"helo"},"namasate react");
-// const h2 = <h1>hello</h1>;
-const restaurants = [
+export const restaurants = [
     {
         "info": {
             "id": "728301",
@@ -1290,75 +1283,3 @@ const restaurants = [
         }
     }
 ]
-const HeadingList = () => {
-    return (
-        <ul className="header-list">
-            <li><a href="#">Swiggy Coropoate</a></li>
-            <li><a href="#">search</a></li>
-            <li><a href="#">offers</a></li>
-            <li><a href="#">Sign in</a></li>
-            <li><a href="#">card</a></li>
-        </ul>
-    )
-}
-const Logo = () => (
-    <div id="logo-container" >
-        <img src="https://i.pinimg.com/originals/b1/fc/bb/b1fcbbfd4fb8116c714ef352bb39bbaf.jpg" alt="food logo" />
-        {/* <h1>hello</h1> */}
-    </div>
-)
-
-const Heading = () => {
-    return (<div className="heading-container">
-        <Logo />
-        <HeadingList />
-    </div>)
-}
-const Card = (props) => {
-
-    const {restObj} = props;
-
-    const {id,cloudinaryImageId,name,avgRating,sla,cuisines} = restObj?.info;
-    console.log("c",cuisines)
-    return (
-        
-        <div className="card-container">
-            <div className="card-img">
-                <img alt="item-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} />
-            </div>
-            <div className="card-detail">
-                <h3>{name}</h3>
-                <div>
-                    <span>{avgRating}</span>
-                    <span>{sla.slaString}</span>
-                </div>
-                <h4>{cuisines.slice(0,5).join(", ") }</h4>
-            </div>
-        </div>
-    )
-}
-
-const Main = () => {
-    return (
-        <main>
-            {restaurants.map((restaurant )=>{
-                return (<Card restObj = {restaurant} key={restaurant.info.id}/>)
-            }
-            )}
-        
-
-        </main>
-    )
-}
-
-
-
-const Container = () => {
-    return (<>
-        <Heading />
-        <Main />
-    </>)
-
-}
-
-root.render(<Container />);

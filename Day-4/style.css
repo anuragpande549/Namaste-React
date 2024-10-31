@@ -106,3 +106,9 @@ main{
      
     }
 }
+
+.btn{
+    padding: .5rem;
+    color: blueviolet;
+    text-align: center;
+}
