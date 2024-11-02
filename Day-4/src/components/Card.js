@@ -13,6 +13,7 @@ const Card = (props) => {
                 <div className="card-img">
                     <img alt="item-image" src={CLOUD_IMG + cloudinaryImageId} />
                 </div>
+
                 <div className="card-detail">
                     <h3>{name}</h3>
                     <div>

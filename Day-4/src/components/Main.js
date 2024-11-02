@@ -1,8 +1,9 @@
 import Card from "./Card";
-import { restaurants } from "../modules/cardData"
 import { useState } from "react";
 import { useEffect } from "react";
 import { API_DATA } from "../ulits/urls"
+import SimmerUi from "./SimmerUi"
+import { Link } from "react-router-dom";
 
 
 const Main = () => {
@@ -11,10 +12,11 @@ const Main = () => {
     const [felterRestaurant, setfilterRestaurant] = useState([])
     const [searchRest, setsearchRest] = useState("")
 
-    function check(value){
+    function check(value) {
+        console.log(value)
         value.forEach(each => {
-            let eachData  = each?.card?.card?.gridElements?.infoWithStyle?.restaurants[1]?.info?.avgRating
-            if( eachData != undefined){
+            let eachData = each?.card?.card?.gridElements?.infoWithStyle?.restaurants
+            if (eachData != undefined) {
                 console.log(eachData);
                 const updateData = each?.card?.card?.gridElements?.infoWithStyle?.restaurants
                 setRestaurant(updateData);
@@ -22,7 +24,7 @@ const Main = () => {
             }
         });
     }
-    
+
     const resData = async () => {
         const url = API_DATA;
         const response = await fetch(url);
@@ -30,30 +32,50 @@ const Main = () => {
         check(jsonData?.data?.cards)
     };
 
-    useEffect(() =>{
+    useEffect(() => {
         resData()
-    },[])
-    
+    }, [])
 
-    console.log("hello")
+    const filterCss = {
+        width: "100%",
+        textAlign:"center"
+    }
+
+    console.log("hello", Restaurant.length)
     return (
-        <>
-        
-        <button className="btn" onClick={() => {
-                setRestaurant(Restaurant.filter((res)=>res.info.avgRating > 4))
-            }}>Best Restaurant</button>
-        <button className="btn" onClick={() => setRestaurant(felterRestaurant)}>ALL Restaurant</button>
-        <main>
+        felterRestaurant.length === 0 ? (
+            <>
+            <h1>Loading...</h1>
+            <SimmerUi/>
+            </>
+        ) : (
+            <>
+                <div id="filter-option" style={filterCss}>
 
-            {Restaurant.map((restaurant )=>{
-                return (<Card restObj = {restaurant} key={restaurant.info.id}/>)
-            }
-            )}
+                <button className="btn" onClick={() => {
+                    setRestaurant(Restaurant.filter((res) => res.info.avgRating > 4.1))
+                }}>Best Restaurant</button>
+                <button className="btn" onClick={() => setRestaurant(felterRestaurant)}>ALL Restaurant</button>
+                <input type="text" placeholder="this is div" value={searchRest} onChange={(e) => {
+                    setsearchRest(e.target.value)
+                }} />
+                <button className="btn" onClick={() => {
+                    let updateSearch = felterRestaurant.filter((each) => each.info.name.toLowerCase().includes(searchRest.toLowerCase()))
+                    setRestaurant(updateSearch)
+                }}> search</button>
+
+                </div>
+                <main>
+
+                    {Restaurant.map((restaurant) => {
+                        return (<Link to={"/menulist/"+restaurant.info.id} key={restaurant.info.id}><Card restObj={restaurant} key={restaurant.info.id} /></Link>)
+                    }
+                    )}
         
 
-        </main>
-        </>
-    )
+                </main>
+            </>
+        ))
 }
 
 export default Main

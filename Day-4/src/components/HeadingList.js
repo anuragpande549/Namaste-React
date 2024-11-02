@@ -1,13 +1,15 @@
-
+import { Link } from "react-router-dom"
 
 const HeadingList = () => {
     return (
         <ul className="header-list">
-            <li><a href="#">Swiggy Coropoate</a></li>
-            <li><a href="#">search</a></li>
-            <li><a href="#">offers</a></li>
+            
+            <li> <Link to={"/"}>Home</Link></li>
+            <li> <Link to={"/about"}>About</Link></li>
+            <li> <Link to={"/contact"}>Contact</Link></li>
+            <li> <Link to={"/offers"}>Offers</Link></li>
             <li><a href="#">Sign in</a></li>
-            <li><a href="#">card</a></li>
+            <li><a href="#">LogIn</a></li>
         </ul>
     )
 }
