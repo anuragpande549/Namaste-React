@@ -30,6 +30,7 @@ body{
 #logo-container img{
     width: 100%;
     height: 80%;
+    mix-blend-mode:darken;
 }
 
 .header-list{

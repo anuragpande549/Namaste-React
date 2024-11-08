@@ -5,6 +5,8 @@ const Card = (props) => {
 
     const { restObj } = props;
 
+
+
     const { id, cloudinaryImageId, name, avgRating, sla, cuisines } = restObj?.info;
     return (
         <>

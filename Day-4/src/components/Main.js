@@ -13,7 +13,7 @@ const Main = () => {
     const [searchRest, setsearchRest] = useState("")
 
     function check(value) {
-        console.log(value)
+        // console.log(value)
         value.forEach(each => {
             let eachData = each?.card?.card?.gridElements?.infoWithStyle?.restaurants
             if (eachData != undefined) {
@@ -41,7 +41,7 @@ const Main = () => {
         textAlign:"center"
     }
 
-    console.log("hello", Restaurant.length)
+    // console.log("hello", Restaurant.length)
     return (
         felterRestaurant.length === 0 ? (
             <>
