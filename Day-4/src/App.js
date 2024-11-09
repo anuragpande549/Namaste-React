@@ -41,22 +41,23 @@ const appRouter = createBrowserRouter([{
             path : "/offers",
             element: <Offers/>
         },
+        {
+            path : "/menulist/:resId",
+            element:<MenuList/>,
+            errorElement : <Error/>
+        },
+        {
+            path : "/cardClass",
+            element : <CardClass name={"Anurag"}/>
+        
+        }
 
 ],
 
 errorElement : <Error/>
 },
 
-{
-    path : "/menulist/:resId",
-    element:<MenuList/>,
-    errorElement : <Error/>
-},
-{
-    path : "/cardClass",
-    element : <CardClass name={"Anurag"}/>
 
-}
 
 ]
 
