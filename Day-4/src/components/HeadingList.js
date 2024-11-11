@@ -32,11 +32,6 @@ const HeadingList = () => {
             </li>
             <li>
                 <a href="#" className="hover:text-blue-500 transition-colors duration-200">
-                    Sign In
-                </a>
-            </li>
-            <li>
-                <a href="#" className="hover:text-blue-500 transition-colors duration-200">
                     Log In
                 </a>
             </li>

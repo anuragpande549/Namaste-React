@@ -1,9 +1,10 @@
-import Card from "./Card";
+import Card , { newCard }from "./Card";
 import { useState, useEffect } from "react";
 import { API_DATA } from "../ulits/urls";
 import SimmerUi from "./SimmerUi";
 import { Link } from "react-router-dom";
 import Slider from "./Slider";
+// import { NewCard } from "./Card";
 
 const Main = () => {
     const [Restaurant, setRestaurant] = useState([]);
@@ -37,6 +38,8 @@ const Main = () => {
     useEffect(() => {
         resData();
     }, []);
+
+    const MyNewCard = newCard(Card)
 
     return (
         felterRestaurant.length === 0 ? (
@@ -82,12 +85,10 @@ const Main = () => {
                 <main className="grid grid-cols-1 w-[auto] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6">
                     {Restaurant.map((restaurant) => (
                         <Link to={"/menulist/" + restaurant.info.id} key={restaurant.info.id}>
-                            <Card restObj={restaurant} />
+                            <MyNewCard restObj={restaurant} />
                         </Link>
                     ))}
                 </main>
-
-
 
 
             </>

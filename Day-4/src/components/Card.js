@@ -2,7 +2,9 @@ import { CLOUD_IMG } from "../ulits/urls";
 
 const Card = (props) => {
   const { restObj } = props;
+
   const { id, cloudinaryImageId, name, avgRating, sla, cuisines } = restObj?.info;
+
   return (
     <div className="card-container  bg-white shadow-lg rounded-lg overflow-hidden flex flex-col justify-between h-full max-w-[23rem]  transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-gray-100">
       <div className="card-img flex-shrink-0">
@@ -24,6 +26,19 @@ const Card = (props) => {
     </div>
   );
 };
+
+export const newCard=(Card)=>{
+  return  (props)=>{
+    
+    return(
+      <>
+      {/* <h1>this is new component</h1> */}
+      <Card {...props}/>
+      </>
+    )
+  }
+  
+}
 
 
 export default Card;

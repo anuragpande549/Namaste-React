@@ -12,7 +12,7 @@ const About = () => {
     let { login, avatar_url, repos_url, name, bio, followers, following } = mydata;
 
     return (
-        <main className="min-h-screen flex justify-center items-center bg-gray-100 py-8">
+        <main className="min-h-screen flex justify-center items-center bg-gray-500 py-8">
             <div className="card bg-white shadow-xl rounded-lg w-full max-w-lg p-6">
                 <div className="flex flex-col items-center text-center">
                     <img
