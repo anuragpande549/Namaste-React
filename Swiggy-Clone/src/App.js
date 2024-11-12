@@ -9,6 +9,7 @@ import Offers from "./components/Offers";
 import MenuList from "./components/MenuList";
 import CardClass from "./components/CardClass";
 import { lazy,Suspense } from "react";
+import FinalCard from "./components/FinalCard";
 
 
 // console.log(createBrowserRouter)
@@ -49,6 +50,11 @@ const appRouter = createBrowserRouter([{
         {
             path : "/cardClass",
             element : <CardClass name={"Anurag"}/>
+        
+        },
+        {
+            path : "/finalCard",
+            element : <FinalCard/>
         
         }
 

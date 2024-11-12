@@ -82,7 +82,7 @@ const Main = () => {
                         Search
                     </button>
                 </div>
-                <main className="grid grid-cols-1 w-[auto] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6">
+                <main className="grid grid-cols-1 w-[auto] items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6">
                     {Restaurant.map((restaurant) => (
                         <Link to={"/menulist/" + restaurant.info.id} key={restaurant.info.id}>
                             <MyNewCard restObj={restaurant} />

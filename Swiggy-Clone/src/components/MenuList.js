@@ -6,7 +6,7 @@ import MenuCards from "./MenuCards";
 const MenuList = () => {
     const [menu, setMenu] = useState([]);
     const { resId } = useParams();
-
+    const [menuIndex, setMenuIndex] = useState(0);
     const fetchMenu = async () => {
         try {
             const response = await fetch(API_MENU + resId);
@@ -53,9 +53,10 @@ const MenuList = () => {
             {filterData.map((card, index) => (
                 <MenuCards
                     key={index}
-                    
+                    setMenuIndex ={()=>setMenuIndex(index)}
+                    hideShow={index!=menuIndex?true:false}
                     myCards={card?.card?.card?.itemCards || card?.card?.card?.categories}
-                    title={card?.card?.card?.title}
+                    title={card?.card?.card?.title }
                 />
             ))}
         </div>

@@ -6,9 +6,12 @@ const ShowMenu = ({ showList }) => {
     // const [hide, setHide] = useState(true);
     // const { price, name, isVeg, imageId, description, ratings, itemAttribute, nextAvailableAtMessage } = showList;
 
+
+
+
     return (
         <>
-            <div id="menu-list-details" className="flex  justify-between items-center border-b pb-6 px-8 py-4 mx-auto">
+            <div id="menu-list-details"  className={`flex  justify-between ${""} items-center border-b pb-6 px-8 py-4 mx-auto`}>
                 <div className="flex flex-col  gap-2 w-3/4">
                     <span className={`text-md font-semibold ${showList?.itemAttribute.vegClassifier === "VEG" ? "text-green-600" : "text-red-600"}`}>
                         {showList?.itemAttribute.vegClassifier}
@@ -40,9 +43,9 @@ export const CateShowData = () =>{
             // <ShowMenu showList={showList.card.card.info}/>
             <>
 
-            {showList.map((each)=>{
+            {showList.map((each,index)=>{
                 return(
-                    <ShowMenu showList={each?.card?.info} />
+                    <ShowMenu key={index} showList={each?.card?.info} />
                 )
             })}
             </>

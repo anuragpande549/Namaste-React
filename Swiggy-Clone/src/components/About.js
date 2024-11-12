@@ -1,6 +1,7 @@
 import React from "react";
 import useMyApi from "../ulits/calldata";
-
+// import UserContext from "../ulits/userContext";
+import { useContext } from "react";
 const About = () => {
     let mydata = useMyApi();
     console.log(mydata);
@@ -8,6 +9,8 @@ const About = () => {
     if (!mydata) {
         return <div>Loading...</div>;
     }
+
+    // const {userName} = useContext(UserContext)
 
     let { login, avatar_url, repos_url, name, bio, followers, following } = mydata;
 
