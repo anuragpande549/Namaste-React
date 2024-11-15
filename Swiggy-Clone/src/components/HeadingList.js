@@ -28,15 +28,15 @@ const HeadingList = () => {
                         Contact
                     </Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to="/offers" className="hover:text-blue-500 transition-colors duration-200">
                         Offers
                     </Link>
-                </li>
+                </li> */}
                 <li>
-                <Link to="/finalCard" className="hover:text-blue-500 transition-colors duration-200">
+                {/* <Link to="/finalCard" className="hover:text-blue-500 transition-colors duration-200">
                         card:{card.length}
-                    </Link>
+                    </Link> */}
                     {/* <UserContext.Consumer>
                         {(data) => (
                             <h1 className="hover:text-blue-500 transition-colors duration-200">

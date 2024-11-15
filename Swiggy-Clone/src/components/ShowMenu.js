@@ -1,5 +1,7 @@
 import { useState } from "react";
-
+// import { addItem } from "./redux/cardSplice";
+// import { useSelector } from "react-redux";
+// import appStore from "./redux/appStore";
 const ShowMenu = ({ showList }) => {
     const CLOUD_IMG = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
     // console.log(showList.price)
@@ -17,8 +19,8 @@ const ShowMenu = ({ showList }) => {
                         {showList?.itemAttribute.vegClassifier}
                     </span>
                     <h3 className="text-2xl font-bold text-gray-900">{showList?.name}</h3>
-                    <h4 className="text-lg font-medium text-gray-700">Rs {showList?.price / 100}</h4>
-                    <h6 className="text-sm text-yellow-500 font-semibold">{showList?.ratings?.aggregatedRating?.rating} ★</h6>
+                    <h4 className="text-lg font-medium text-gray-700">Rs {showList?.price / 100||showList?.defaultPrice /100}</h4>
+                    <h6 className="text-sm text-yellow-500 font-semibold">{(showList?.ratings?.aggregatedRating?.rating)?showList?.ratings?.aggregatedRating?.rating +"★":""} </h6>
                     <p className="text-sm text-gray-600 max-w-[60vw] leading-relaxed">{showList?.description}</p>
                 </div>
                 <div className="text-center">

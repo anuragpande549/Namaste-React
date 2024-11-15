@@ -38,12 +38,12 @@ const MenuList = () => {
     // console.log(filterData[1].card.card.categories,"f")
     return (
         <div id="menu-container" className="flex flex-col items-center absolute bg-blue-200 left-[50%] translate-x-[-50%] p-6 bg-white rounded-lg shadow-lg w-[90vw] mx-auto mt-4">
-            <div id="menu-heading" className="text-center">
-                <h1 className="text-2xl font-bold text-gray-800 mb-2">{name || "Restaurant Name"}</h1>
+            <div id="menu-heading" className="text-center bg-slate-200 w-[100%] p-5 rounded-lg">
+                <h1 className="text-4xl  font-bold text-orange-600  mb-2">{name || "Restaurant Name"}</h1>
                 <div id="menu-res-details" className="text-gray-600 flex justify-center gap-3 text-sm">
                     <div className="flex items-center gap-2">
-                        <span className="text-green-500 font-semibold">{avgRating || "N/A"}⭐</span>
-                        <span className="text-gray-500">{costForTwoMessage || "Cost information not available"}</span>
+                        <span className="text-green-500 text-xl font-semibold">{avgRating || "N/A"}⭐</span>
+                        <span className="text-gray-500 text-xl font-semibold">{costForTwoMessage || "Cost information not available"}</span>
                     </div>
                 </div>
                 <div id="menu-cuisines" className="text-gray-700 mt-2 text-sm">
