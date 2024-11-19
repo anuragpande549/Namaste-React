@@ -1,9 +1,12 @@
 import React from 'react'
+import ButtonList from './ButtonList'
+import VideoContainer from './VideoContainer'
 
 function MainContains() {
   return (
-    <div>
-      
+    <div >
+      <ButtonList/>
+      <VideoContainer/>
     </div>
   )
 }

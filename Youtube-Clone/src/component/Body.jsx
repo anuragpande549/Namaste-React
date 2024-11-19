@@ -1,10 +1,12 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import MainContains from './MainContains'
 
 function Body() {
   return (
-    <div>
+    <div className='flex absolute overflow-hidden w-[100vw]'>
       <Sidebar/>
+      <MainContains/>
     </div>
   )
 }
