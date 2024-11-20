@@ -4,7 +4,7 @@ import VideoContainer from './VideoContainer'
 
 function MainContains() {
   return (
-    <div >
+    <div className='h-[92vh] box-border box-content overflow-hidden' >
       <ButtonList/>
       <VideoContainer/>
     </div>
